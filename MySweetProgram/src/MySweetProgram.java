@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class MySweetProgram {
     public static void main(String[] args){
@@ -11,8 +8,13 @@ public class MySweetProgram {
         names.push("Georgia");
         names.push("Anna");
         names.push("Brooklyn");
-        System.out.println(names.pop());
-        System.out.println(names.removeFirst());
-        System.out.println(names.remove());
+        Iterator<String> it = names.iterator();
+
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+        for(String s: names){
+            System.out.println(s);
+        }
     }
 }
