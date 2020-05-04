@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        MinutesToYearsDaysCalculator.printYearsAndDays(561600);
+        IntEqualityPrinter.printEqual(1, 2, 3);
     }
 }
