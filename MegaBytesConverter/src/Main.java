@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(TeenNumberChecker.isTeen(13));
+        System.out.println("Area of circle = " + AreaCalculator.area(-1.0, 4.0));
+
     }
 }
