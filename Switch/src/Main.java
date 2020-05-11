@@ -2,21 +2,27 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(sumFirstAndLastDigit(-10));
+        System.out.println(getEvenDigitSum(-22));
     }
-//A program that sum first and last digit
-    public static int sumFirstAndLastDigit(int number){
-        int firstDigit = 0;
-        int lastDigit = number % 10;
-        int sum;
-        if(number < 0){
-            return -1;
-        }else {
-            while (number > 0){
-                firstDigit = number;
-                number = number/10;
-            }
-            sum = firstDigit + lastDigit;
-        }return sum;
+
+    // A program to get the sum of even numbers;
+    public static int getEvenDigitSum(int number){
+      int evenDigitSum = 0;
+      int lastDigit = 0;
+      if(number < 0){
+          return -1;
+      }
+      while(number != 0){
+          //Find the last digit
+          lastDigit = number % 10;
+          //Check if the last digit is even
+          if(lastDigit % 2 == 0){
+              //Add last digit to even digit sum
+              evenDigitSum += lastDigit;
+
+          }
+          //remove the last number
+          number /= 10;
+      }return evenDigitSum;
     }
 }
