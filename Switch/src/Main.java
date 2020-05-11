@@ -1,46 +1,22 @@
-import javax.swing.*;
-
-//A program shows if isLeapYear and get days in month
+//A program to check a number if is palindrome or not;
+// if its a palindrome it return true and if not return false
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getDaysInMonth(1, -2020));
+        System.out.println(isPalindrome(11212));
     }
 
-    //A program shows a if the year isLeapYear
-    public static boolean isLeapYear(int year){
-        if((year >= 1) && (year <= 9999)){
-            if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){
-                return true;
-            }else{
-                return false;
-            }
+    public static boolean isPalindrome(int number){
+        int reverse = 0;
+        int lastDigit;
+        int num = number;
+        while((num != 0) || (num > 0)){
+            lastDigit = num % 10;
+            reverse = reverse*10 +lastDigit;
+            num = num/10;
+        }
+        if(number == reverse){
+            return true;
         }
         return false;
-    }
-
-    //A program shows get month of the year
-    public static int getDaysInMonth(int month, int year) {
-        switch (month) {
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-                if((year >= 1) && (year <= 9999))
-                    return 31;
-                else
-                    return -1;
-            case 2:
-                if((year >= 1) && (year <= 9999))
-                    if(isLeapYear(year))
-                        return 29;
-                    else
-                        return 28;
-                else
-                    return -1;
-            case 4: case 6: case 9: case 11:
-                if((year >= 1) && (year <= 9999))
-                    return 30;
-                else
-                    return -1;
-            default:
-                return -1;
-        }
     }
 }
