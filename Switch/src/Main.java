@@ -1,22 +1,22 @@
-//A program to check a number if is palindrome or not;
-// if its a palindrome it return true and if not return false
+//A program that sum up first and last digit
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(isPalindrome(11212));
+        System.out.println(sumFirstAndLastDigit(-10));
     }
-
-    public static boolean isPalindrome(int number){
-        int reverse = 0;
-        int lastDigit;
-        int num = number;
-        while((num != 0) || (num > 0)){
-            lastDigit = num % 10;
-            reverse = reverse*10 +lastDigit;
-            num = num/10;
-        }
-        if(number == reverse){
-            return true;
-        }
-        return false;
+//A program that sum first and last digit
+    public static int sumFirstAndLastDigit(int number){
+        int firstDigit = 0;
+        int lastDigit = number % 10;
+        int sum;
+        if(number < 0){
+            return -1;
+        }else {
+            while (number > 0){
+                firstDigit = number;
+                number = number/10;
+            }
+            sum = firstDigit + lastDigit;
+        }return sum;
     }
 }
