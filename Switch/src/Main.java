@@ -1,28 +1,25 @@
-//A program that sum up first and last digit
+//A program that show if first & second number has shared
+//the same digit return true otherwise return false
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getEvenDigitSum(-22));
+        System.out.println(hasShareDigit(12, 23));
     }
+//Method to show whether first & second number has shared the same
+    //digit it will return true otherwise return false
+    public static boolean hasShareDigit(int number1, int number2){
+        //find digit in the number from the left
+        int a = number1/10;
+        int b = number2/10;
+        // find digit in the number from right
+        int c = number1 % 10;
+        int d = number2 % 10;
 
-    // A program to get the sum of even numbers;
-    public static int getEvenDigitSum(int number){
-      int evenDigitSum = 0;
-      int lastDigit = 0;
-      if(number < 0){
-          return -1;
-      }
-      while(number != 0){
-          //Find the last digit
-          lastDigit = number % 10;
-          //Check if the last digit is even
-          if(lastDigit % 2 == 0){
-              //Add last digit to even digit sum
-              evenDigitSum += lastDigit;
-
-          }
-          //remove the last number
-          number /= 10;
-      }return evenDigitSum;
+        if(((number1 >= 10) && (number1 <= 99)) && ((number2 >= 10) && (number2 <= 90))){
+            if((a == b) || (a == c) || (a == d) || (b == c) || (b == d) || (c == d))
+                return true;
+            else
+                return false;
+        }return false;
     }
 }
