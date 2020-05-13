@@ -1,18 +1,25 @@
-//A program to print all factors
+//A program to show if the number is a perfect number
 
 public class Main {
     public static void main(String[] args) {
-        printFactors(-1);
+        System.out.println(isPerfectNumber(-1));
     }
-    // A method that prints all factors
-    public static void printFactors(int number){
-        if(number < 1){
-            System.out.println("Invalid Value");
-        }else {
-            for (int i = 1; i <= number; i++){
-                if (number % i == 0)
-                    System.out.println(i);
+
+    //A method in a program to show if the number is a perfect number
+    public static boolean isPerfectNumber(int number) {
+        int sum = 0;
+        if (number < 1) {
+            return false;
+        } else {
+                for (int j = 1; j < number; j++) {
+                    if (number % j == 0) {
+                        sum += j;
+                    }
+                }
+                if (sum == number)
+                    return true;
+                else
+                    return false;
             }
-        }
     }
-}
+    }
