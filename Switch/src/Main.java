@@ -1,29 +1,18 @@
 //A program to print square star
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        printSquareStar(8);
-    }
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.setFirstNumber(5.0);
+        calculator.setSecondNumber(4);
+        System.out.println("Add= " + calculator.getAdditionResult());
+        System.out.println("Subtract= " + calculator.getSubtractionResult());
 
-    //A Method which prints square star after execution
-    public static void printSquareStar(int number){
-        int rowCount = number;
-        if (number < 5){
-            System.out.print("Invalid Value");
-        }else {
-            for(int row = 1; row <= number; row++){
-                int rowNumber = row;
-                for(int column = 1; column <= number; column++){
-                    int columnNumber = column;
-                    int currentRow = rowNumber;
-                    if ((row == 1) || (row == number) || (column == 1) || (column == number) || (rowNumber == columnNumber) || (columnNumber == ((rowCount - currentRow) + 1))){
-                        System.out.print("*");
-                    }else {
-                        System.out.print(" ");
-                    }
-                }System.out.println();
-            }
-
-        }
+        calculator.setFirstNumber(5.25);
+        calculator.setSecondNumber(0);
+        System.out.println("Multiply= " + calculator.getMultiplicationResult());
+        System.out.println("Division= " + calculator.getDivisionResult());
     }
 }
