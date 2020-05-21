@@ -1,44 +1,53 @@
 public class Wall {
+    //Class variables
     private double width;
     private double height;
 
+    //Constructors
     public Wall(){
-        this(0.0, 0.0);
     }
 
-    public Wall(double width, double height){
-        if (width < 0)
+    public Wall(double width, double height) {
+        this.width = width;
+        this.height = height;
+        if (width < 0){
             this.width = 0;
-        else if (height < 0)
+        }
+        if (height < 0){
             this.height = 0;
+        }
+    }
+
+    //Getters
+    public double getWidth() {
+        return width;
+    }
+    public double getHeight() {
+        return height;
+    }
+
+    //Setters
+    public void setWidth(double width) {
+        if (width < 0){
+            this.width = 0;
+        }
         else {
             this.width = width;
+        }
+    }
+
+
+
+    public void setHeight(double height) {
+        if (height < 0){
+            this.height = 0;
+        }
+        else {
             this.height = height;
         }
     }
 
-    public double getWidth(){
-        return this.width;
-    }
-
-    public double getHeight(){
-        return this.height;
-    }
-
-    public void setWidth(double width1){
-        if (width1 < 0)
-            this.width = 0;
-        else
-            this.width = width1;
-    }
-
-    public void setHeight(double height1){
-        if (height1 < 0)
-            this.height = 0;
-        else
-            this.height = height1;
-    }
-
+        //Extra Methods
     public double getArea(){
         double area = this.width * this.height;
         return area;
